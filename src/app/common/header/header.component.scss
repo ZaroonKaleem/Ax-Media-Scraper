@@ -70,7 +70,7 @@
                         height: auto;
                         line-height: 1;
                         min-width: auto;
-                        color: #FE7A36;
+                        color: #49a0e7;
                         position: relative;
                         display: inline-block;
     
@@ -1337,3 +1337,30 @@
 
 /* Min width 1600px */
 @media only screen and (min-width: 1600px) {}
+
+
+.choose-plan-btn {
+    background-color: #2183d6;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darken(#2183d6, 10%);
+    }
+  }
+  
+  .material-symbols-outlined {
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: #49a0e7;
+      cursor: pointer;
+    }
+  }
+  

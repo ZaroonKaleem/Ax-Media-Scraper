@@ -28,7 +28,7 @@
                     </i>
                 </button>
             </form>
-            <div class="connected-apps-menu">
+            <!-- <div class="connected-apps-menu">
                 <button type="button" mat-button [matMenuTriggerFor]="messagesMenu" class="menu-btn">
                     <i class="material-symbols-outlined">
                         apps
@@ -118,7 +118,7 @@
                         </li>
                     </ul>
                 </mat-menu>
-            </div>
+            </div> -->
         </div>
         <ul class="header-right-side d-flex align-items-center m-0 p-0 list-unstyled">
             <li>
@@ -132,7 +132,7 @@
                     </i>
                 </button>
             </li>
-            <li>
+            <!-- <li>
                 <button type="button" mat-button [matMenuTriggerFor]="languageMenu" class="language-menu-btn">
                     <i class="material-symbols-outlined">
                         translate
@@ -175,8 +175,8 @@
                         </li>
                     </ul>
                 </mat-menu>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <button
                     mat-button
                     (click)="toggleFullscreen()"
@@ -186,8 +186,8 @@
                         {{ isFullscreen ? 'fullscreen_exit' : 'fullscreen' }}
                     </i>
                 </button>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <button mat-button [matMenuTriggerFor]="notificationsMenu" class="notifications-menu-btn">
                     <i class="material-symbols-outlined">
                         notifications
@@ -257,15 +257,17 @@
                         </a>
                     </div>
                 </mat-menu>
-            </li>
+            </li> -->
             <li>
-                <button mat-button [matMenuTriggerFor]="profileMenu" class="profile-menu-btn">
+                <button class="choose-plan-btn">Choose Your Plan</button>
+                  
+                <!-- <button mat-button [matMenuTriggerFor]="profileMenu" class="profile-menu-btn">
                     <img src="images/admin.png" class="rounded-circle" alt="admin-image">
                     <span class="fw-semibold text-black">
                         Olivia
                     </span>
-                </button>
-                <mat-menu class="profile-menu-dropdown" #profileMenu="matMenu" xPosition="before">
+                </button> -->
+                <!-- <mat-menu class="profile-menu-dropdown" #profileMenu="matMenu" xPosition="before">
                     <div class="admin d-flex align-items-center">
                         <img src="images/admin.png" class="rounded-circle" alt="admin-image">
                         <div>
@@ -346,9 +348,9 @@
                             </a>
                         </li>
                     </ul>
-                </mat-menu>
+                </mat-menu> -->
             </li>
-            <li>
+            <!-- <li>
                 <button
                     mat-button
                     type="button"
@@ -360,7 +362,7 @@
                         settings
                     </i>
                 </button>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>

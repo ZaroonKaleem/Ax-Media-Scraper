@@ -7,11 +7,12 @@ import { FpFaqComponent } from '../common/fp-faq/fp-faq.component';
 import { FpContactComponent } from '../common/fp-contact/fp-contact.component';
 import { FpCtaComponent } from '../common/fp-cta/fp-cta.component';
 import { FpBannerComponent } from '../common/fp-banner/fp-banner.component';
+import { FpSolutionsComponent } from "../common/fp-solutions/fp-solutions.component";
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [FpBannerComponent, FpKeyFeaturesComponent, FpWidgetsComponent, FpTestimonialsComponent, FpTeamComponent, FpFaqComponent, FpContactComponent, FpCtaComponent],
+    imports: [FpBannerComponent, FpKeyFeaturesComponent, FpWidgetsComponent, FpTestimonialsComponent, FpTeamComponent, FpFaqComponent, FpContactComponent, FpCtaComponent, FpSolutionsComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'
 })

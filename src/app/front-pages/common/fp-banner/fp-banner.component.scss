@@ -1,3 +1,16 @@
+.typewriter {
+    color: #2183d6;
+    display: inline-block;
+    min-width: 100px;
+    border-right: 2px solid currentColor;
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: currentColor }
+}
+
 .banner-area {
     padding-top: 185px;
 

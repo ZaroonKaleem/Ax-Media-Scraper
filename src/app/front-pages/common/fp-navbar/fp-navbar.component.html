@@ -10,8 +10,8 @@
             [class.active]="classApplied"
         >
             <a class="navbar-brand" routerLink="/">
-                <img src="images/logo-big.svg" alt="logo">
-                <img src="images/white-logo-big.svg" class="d-none" alt="logo">
+                <img src="images/logo.png" alt="logo">
+                <img src="images/logo.png" class="d-none" alt="logo">
             </a>
             <button
                 class="navbar-toggler"
@@ -25,24 +25,35 @@
             </button>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                            Home
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle cursor-pointer" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                            Product
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a routerLink="/features" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                            Features
-                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" routerLink="/features">Features</a></li>
+                            <li><a class="dropdown-item" routerLink="/pricing">Pricing</a></li>
+                            <li><a class="dropdown-item" routerLink="/integrations">Integrations</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a routerLink="/team" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                            Our Team
+                            Pricing
                         </a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle cursor-pointer" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" routerLink="/blog">Blog</a></li>
+                            <li><a class="dropdown-item" routerLink="/case-studies">Case Studies</a></li>
+                            <li><a class="dropdown-item" routerLink="/webinars">Webinars</a></li>
+                            <li><a class="dropdown-item" routerLink="/guides">Guides</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
-                        <a routerLink="/faq" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                            FAQ's
+                        <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            For Creaters
                         </a>
                     </li>
                     <li class="nav-item">
@@ -50,26 +61,27 @@
                             Contact
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a routerLink="/dashboard" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                             Admin
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
                 <div class="other-options d-flex align-items-center">
                     <a routerLink="/authentication" mat-button>
-                        <i class="material-symbols-outlined">
-                            login
-                        </i>
-                        Login
+                      <i class="material-symbols-outlined" style="color: #2183d6">
+                        login
+                      </i>
+                      Login
                     </a>
-                    <a routerLink="/authentication/sign-up" mat-button>
-                        <i class="material-symbols-outlined">
-                            person
-                        </i>
-                        Register
+                    <a routerLink="/dashboard" mat-button>
+                      <i class="material-symbols-outlined" style="color: white">
+                        person
+                      </i>
+                      Start for free
                     </a>
-                </div>
+                  </div>
+                  
             </div>
         </nav>
     </div>

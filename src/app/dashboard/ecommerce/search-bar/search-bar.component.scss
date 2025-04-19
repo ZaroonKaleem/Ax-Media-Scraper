@@ -1,0 +1,152 @@
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .search-bar-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto; // centers the container horizontally
+    justify-content: center; // ensures children are centered as well
+  
+    .platform-dropdown {
+      display: flex;
+      gap: 8px;
+  
+      button {
+        background: none;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 6px;
+        cursor: pointer;
+        transition: border-color 0.3s;
+  
+        &:hover {
+          border-color: #49a0e7;
+        }
+  
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  
+    .search-input {
+      flex-grow: 1;
+      min-width: 240px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+  
+      &:focus {
+        border-color: #49a0e7;
+      }
+    }
+  
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+  
+      select {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        min-width: 140px;
+  
+        &:focus {
+          border-color: #49a0e7;
+          outline: none;
+        }
+      }
+    }
+  
+    .search-btn {
+      background-color: #49a0e7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: darken(#49a0e7, 10%);
+      }
+    }
+  }
+  
+  .search-bar-container2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  
+    // .platform-dropdown {
+    //   width: auto;
+    //   flex: 0 0 150px;
+    // }
+
+    ::ng-deep .platform-dropdown.mat-form-field-appearance-fill .mat-form-field-flex {
+      background-color: #f5faff; // light background to contrast the blue
+    }
+    
+    ::ng-deep .platform-dropdown.mat-form-field-appearance-fill .mat-form-field-label {
+      color: #49a0e7 !important;
+    }
+    
+    ::ng-deep .platform-dropdown .mat-select-trigger {
+      color: #49a0e7 !important;
+    }
+    
+    ::ng-deep .platform-dropdown .mat-select-arrow {
+      color: #49a0e7 !important;
+    }
+    
+    ::ng-deep .platform-dropdown .mat-option {
+      color: #333; // default text color
+    }
+    
+    ::ng-deep .platform-dropdown .mat-option:hover,
+    ::ng-deep .platform-dropdown .mat-option.mat-selected {
+      background-color: #e0f2ff !important; // light blue background
+      color: #49a0e7 !important;
+    }
+    
+
+    .platform-dropdown {
+      width: 20%;
+    
+      .option-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    
+      mat-option {
+        display: flex;
+        align-items: center;
+      }
+    }
+    
+  
+    .search-input {
+      flex: 1;
+      width: 100%;
+    }
+  }
+  .card-wrapper {
+    display: flex;
+    justify-content: center; // centers card horizontally
+    padding: 3rem 1rem; // optional spacing around card
+  }
+    

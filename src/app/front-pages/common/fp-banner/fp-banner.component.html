@@ -5,32 +5,76 @@
     <div class="container position-relative z-1">
         <div class="banner-content text-center ml-auto mr-auto">
             <h1>
-                Insights On-the-Go: Access Your Dashboard Anywhere, Anytime
+                Discover leading <span class="typewriter">{{currentFitnessWord}}</span> <br> influencers
+                 in <span class="typewriter">{{currentMiamiWord}}</span>
             </h1>
             <p>
-                Our intuitive interface transforms complex data into actionable insights, empowering you to make informed decisions with confidence.
+                Find influencers effortlessly using powerful search and analytics tools across all major social platforms. Heepsy simplifies influencer marketing with comprehensive search, bulk outreach and effective campaign management capabilities.
             </p>
-            <a routerLink="/dashboard" mat-button>
-                <i class="material-symbols-outlined">
-                    person
-                </i>
-                Get started - It is free
-            </a>
+           <!-- Full Page Centered Container -->
+
+<!-- Button Group -->
+<div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+  
+  <!-- Transparent Button -->
+  <button mat-button
+    style="
+      background-color: transparent;
+      color: #32549c;
+      border: 2px solid #32549c;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    "
+    onmouseover="this.style.backgroundColor='rgba(50,84,156,0.05)'"
+    onmouseout="this.style.backgroundColor='transparent'">
+    <i class="material-symbols-outlined">
+        person
+    </i>
+    Check Any Influencer
+  </button>
+
+  <!-- Solid Background Button -->
+  <button mat-button
+    style="
+      background-color: #32549c;
+      color: white;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    "
+    onmouseover="this.style.backgroundColor='#27437e'"
+    onmouseout="this.style.backgroundColor='#32549c'">
+    <i class="material-symbols-outlined">
+        person
+    </i>
+    Book a Demo
+  </button>
+
+</div>
+
         </div>
         <div class="banner-image text-center">
-            <img src="images/front-pages/dashboard.png" alt="dashboard-image">
+            <img src="images/ax/banner-image.webp" alt="dashboard-image">
         </div>
         <div class="shape1">
-            <img src="images/front-pages/shape3.png" alt="shape3">
+            <img src="images/front-pages/shape4.png" alt="shape3">
         </div>
         <div class="shape2">
-            <img src="images/front-pages/shape2.png" alt="shape2">
+            <img src="images/front-pages/shape4.png" alt="shape2">
         </div>
         <div class="shape3">
             <img src="images/front-pages/shape4.png" alt="shape4">
         </div>
         <div class="shape4">
-            <img src="images/front-pages/shape5.png" alt="shape5">
+            <img src="images/front-pages/shape4.png" alt="shape5">
         </div>
     </div>
 </div>

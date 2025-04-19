@@ -11,7 +11,7 @@ import { RouterOutlet, Router, Event, NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
 
-    title = 'Trezo - Angular 18 Material Design Admin Dashboard Template';
+    title = 'Ax - Social Media Scraper';
 
     constructor(
         private router: Router,
