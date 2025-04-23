@@ -1,0 +1,65 @@
+<div class="proposals-container">
+  <mat-card class="proposals-card">
+    <div class="header-section">
+      <h2>All campaign offers</h2>
+      <button mat-raised-button color="primary" class="create-offer-btn">
+        <span class="material-symbols-outlined">add</span> Create offer
+      </button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="filter-section">
+      <div class="filter-row">
+        <mat-form-field appearance="outline" class="filter-field">
+          <mat-label>Filter by creator</mat-label>
+          <input matInput>
+          <span class="material-symbols-outlined" matSuffix>search</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="filter-field">
+          <mat-label>Enter city or country</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="filter-field">
+          <mat-label>Followers</mat-label>
+          <mat-select>
+            <mat-option value="all">All</mat-option>
+            <mat-option value="1k">1K+</mat-option>
+            <mat-option value="10k">10K+</mat-option>
+            <mat-option value="100k">100K+</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-button class="more-filters">
+          <span class="material-symbols-outlined">filter_alt</span> More filters
+        </button>
+      </div>
+    </div>
+
+    <mat-tab-group>
+      <mat-tab label="Proposals">
+        <div class="empty-state">
+          <span class="material-symbols-outlined empty-icon">inbox</span>
+          <h3>No creator proposals yet</h3>
+          <p>This is where your collaboration proposals will appear.</p>
+          <p class="tip-text">
+            <span class="material-symbols-outlined">lightbulb</span> 
+            Tip: Create an offer in seconds to start receiving collaboration proposals from creators.
+          </p>
+          <button mat-raised-button color="primary" class="create-offer-btn">
+            <span class="material-symbols-outlined">add</span> Create offer
+          </button>
+        </div>
+      </mat-tab>
+      <mat-tab label="Ignored">
+        <div class="empty-state">
+          <span class="material-symbols-outlined empty-icon">block</span>
+          <h3>No ignored proposals</h3>
+          <p>Ignored proposals will appear here.</p>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

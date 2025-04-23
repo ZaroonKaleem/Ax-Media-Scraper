@@ -1,4 +1,4 @@
-import { NgFor, isPlatformBrowser, NgIf } from '@angular/common';
+import { NgFor, isPlatformBrowser, NgIf, CommonModule } from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
@@ -15,11 +15,14 @@ import { CustomizerSettingsService } from '../../../customizer-settings/customiz
 @Component({
     selector: 'app-compose',
     standalone: true,
-    imports: [RouterLink, SidebarComponent, MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, ReactiveFormsModule, FormsModule, NgFor, NgIf, NgxEditorModule, MatMenuModule],
+    imports: [CommonModule ,RouterLink, SidebarComponent, MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, ReactiveFormsModule, FormsModule, NgFor, NgIf, NgxEditorModule, MatMenuModule],
     templateUrl: './compose.component.html',
     styleUrl: './compose.component.scss'
 })
 export class ComposeComponent {
+
+   
+      
 
     // Text Editor
     editor!: Editor | null;  // Make it nullable

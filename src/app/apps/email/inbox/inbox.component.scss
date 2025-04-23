@@ -337,3 +337,12 @@
 
 /* Min width 1600px */
 @media only screen and (min-width: 1600px) {}
+
+.inbox-nav-links a.active {
+    color: #49a0e7 !important;
+  }
+  
+  .inbox-nav-links a.active i {
+    color: #49a0e7 !important;
+  }
+  

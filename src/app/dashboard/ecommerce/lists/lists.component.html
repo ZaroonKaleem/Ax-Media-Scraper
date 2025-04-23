@@ -1,0 +1,132 @@
+<div class="list-container">
+    <!-- Expandable Sidebar -->
+    <div class="sidebar" style="background-color: #ffffff;" [class.collapsed]="isSidebarCollapsed">
+        <button
+        (click)="toggleSidebar()"
+        style="
+          position: absolute;
+          top: 15px;
+          right: -15px;
+          background-color: #49a0e7;
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+          z-index: 10;
+        "
+      >
+        <i class="material-symbols-outlined" style="font-size: 20px;">
+          {{ isSidebarCollapsed ? 'chevron_right' : 'chevron_left' }}
+        </i>
+      </button>
+      
+  
+      <div *ngIf="!isSidebarCollapsed" class="list-sidebar"
+     style="
+       padding: 20px;
+       border-right: 1px solid #e0e0e0;
+       background-color: #ffffff;
+     ">
+  <!-- Header with Icon -->
+  <h3 style="margin: 0 0 15px; font-size: 18px; color: #333; display: flex; align-items: center;">
+    <i class="material-symbols-outlined" style="vertical-align: middle; color: #49a0e7;">list</i>
+    <span style="margin-left: 8px;">Your Lists</span>
+  </h3>
+
+  <!-- Search Bar and Sort Button Next to Each Other -->
+  <div style="display: flex; align-items: center; margin-bottom: 15px;">
+    <!-- Search Bar -->
+    <div style="flex: 1; position: relative; margin-right: 10px;">
+      <input
+        type="text"
+        placeholder="Search Lists"
+        style="
+          width: 100%;
+          padding: 8px 12px;
+          font-size: 14px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          padding-left: 30px; /* Space for the icon */
+        "
+      />
+      <i class="material-symbols-outlined"
+         style="
+           position: absolute;
+           left: 8px;
+           top: 50%;
+           transform: translateY(-50%);
+           cursor: pointer;
+           color: #49a0e7;
+           font-size: 22px;
+         "
+      >
+        search
+      </i>
+    </div>
+
+    <!-- Sort Button -->
+    <i class="material-symbols-outlined" 
+       style="
+         cursor: pointer;
+         color: #49a0e7;
+         font-size: 22px;
+       "
+       (click)="toggleListOrder()">
+      sort
+    </i>
+  </div>
+
+  <!-- Add New List Button -->
+  <div style="text-align: center; margin-bottom: 15px;">
+    <button 
+      mat-raised-button
+      (click)="createList()"
+      style="
+        background-color: #49a0e7;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+      "
+    >
+      Add New List
+    </button>
+  </div>
+
+  <!-- List of Existing Lists -->
+  <ul style="list-style: none; padding: 0; margin: 0;background-color: #F6F7F9;">
+    <li *ngFor="let list of lists"
+        style="
+          padding: 10px;
+          margin-bottom: 5px;
+          border-radius: 6px;
+          cursor: pointer;
+          color: #333;
+          transition: background-color 0.2s, color 0.2s;
+        "
+        onmouseover="this.style.backgroundColor='#f0f8ff'; this.style.color='#49a0e7';"
+        onmouseout="this.style.backgroundColor=''; this.style.color='#333';"
+    >
+      {{ list.name }}
+    </li>
+  </ul>
+</div>
+
+    </div>
+  
+    <!-- Main Area -->
+    <div class="main-content" style="background-color: #F6F7F9;">
+      <div *ngIf="lists.length === 0" class="empty-state">
+        <button mat-raised-button (click)="createList()">Create New List</button>
+      </div>
+    </div>
+  </div>
+  

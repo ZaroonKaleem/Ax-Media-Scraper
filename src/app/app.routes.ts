@@ -206,6 +206,13 @@ import { CryptoComponent } from './dashboard/crypto/crypto.component';
 import { SalesComponent } from './dashboard/sales/sales.component';
 import { HospitalComponent } from './dashboard/hospital/hospital.component';
 import { DownloadableTableComponent } from './tables/downloadable-table/downloadable-table.component';
+import { ListsComponent } from './dashboard/ecommerce/lists/lists.component';
+import { FpForCreatersComponent } from './front-pages/common/fp-for-creaters/fp-for-creaters.component';
+import { SearchAnyInfluencerComponent } from './dashboard/ecommerce/search-any-influencer/search-any-influencer.component';
+import { OffersComponent } from './dashboard/ecommerce/offers/offers.component';
+import { ProposalsComponent } from './dashboard/ecommerce/offers/proposals/proposals.component';
+import { MyCapaignComponent } from './dashboard/ecommerce/offers/my-capaign/my-capaign.component';
+import { MediaGalleryComponent } from './dashboard/ecommerce/media-gallery/media-gallery.component';
 
 export const routes: Routes = [
     {
@@ -216,6 +223,7 @@ export const routes: Routes = [
             {path: 'features', component: FeaturesComponent},
             {path: 'team', component: TeamComponent},
             {path: 'faq', component: FaqComponent},
+            {path: 'for-creaters', component: FpForCreatersComponent},
             {path: 'contact', component: ContactComponent}
         ]
     },
@@ -224,14 +232,25 @@ export const routes: Routes = [
         component: DashboardComponent,
         children: [
             {path: '', component: EcommerceComponent},
-            {path: 'crm', component: CrmComponent},
-            {path: 'project-management', component: ProjectManagementComponent},
-            {path: 'lms', component: LmsComponent},
-            {path: 'helpdesk', component: HelpdeskComponent},
-            {path: 'analytics', component: AnalyticsComponent},
-            {path: 'crypto', component: CryptoComponent},
-            {path: 'sales', component: SalesComponent},
-            {path: 'hospital', component: HospitalComponent},
+            {path: 'lists', component: ListsComponent},
+            {path: 'check-influencer', component: SearchAnyInfluencerComponent},
+            {path: 'media', component: MediaGalleryComponent},
+            // {path: 'crm', component: CrmComponent},
+            // {path: 'project-management', component: ProjectManagementComponent},
+            // {path: 'lms', component: LmsComponent},
+            // {path: 'helpdesk', component: HelpdeskComponent},
+            // {path: 'analytics', component: AnalyticsComponent},
+            // {path: 'crypto', component: CryptoComponent},
+            // {path: 'sales', component: SalesComponent},
+            // {path: 'hospital', component: HospitalComponent},
+            {
+                path: 'offers',
+                component: OffersComponent,
+                children: [
+                    {path: 'proposals', component: ProposalsComponent},
+                    {path: 'my-campaign', component: MyCapaignComponent}
+                ]
+            },
             {
                 path: 'apps',
                 component: AppsComponent,

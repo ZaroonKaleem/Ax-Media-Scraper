@@ -1,4 +1,4 @@
-<div class="account-settings-card">
+<!-- <div class="account-settings-card">
     <h5>
         Profile
     </h5>
@@ -123,7 +123,6 @@
                 <mat-form-field>
                     <mat-label>Choose a date</mat-label>
                     <input matInput [matDatepicker]="dobPicker">
-                    <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
                     <mat-datepicker-toggle matIconSuffix [for]="dobPicker"></mat-datepicker-toggle>
                     <mat-datepicker #dobPicker></mat-datepicker>
                 </mat-form-field>
@@ -326,4 +325,74 @@
             Update Profile
         </button>
     </div>
-</div>
+</div> -->
+
+
+<div class="settings-container">
+    <mat-card class="settings-card">
+      <div class="settings-header">
+        <h1><span class="material-symbols-outlined">settings</span> Account Settings</h1>
+        <p>Manage your account information and preferences</p>
+      </div>
+  
+      <mat-divider></mat-divider>
+  
+      <form class="settings-form">
+        <div class="form-section">
+          <h2><span class="material-symbols-outlined">person</span> Personal Information</h2>
+          
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Enter your full name">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Enter your email">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Enter your phone number">
+            <span matSuffix class="material-symbols-outlined">call</span>
+          </mat-form-field>
+        </div>
+  
+        <div class="form-section">
+          <h2><span class="material-symbols-outlined">lock</span> Security</h2>
+          
+          <mat-form-field appearance="outline">
+            <mat-label>Current Password</mat-label>
+            <input matInput type="password" placeholder="Enter current password">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>New Password</mat-label>
+            <input matInput type="password" placeholder="Enter new password">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" placeholder="Confirm new password">
+          </mat-form-field>
+        </div>
+  
+        <div class="form-section">
+          <h2><span class="material-symbols-outlined">notifications</span> Notifications</h2>
+          
+          <mat-slide-toggle color="primary" checked>Email Notifications</mat-slide-toggle>
+          <mat-slide-toggle color="primary" checked>Push Notifications</mat-slide-toggle>
+          <mat-slide-toggle color="primary">SMS Alerts</mat-slide-toggle>
+        </div>
+  
+        <div class="form-actions">
+          <button mat-flat-button color="primary" class="save-btn">
+            <span class="material-symbols-outlined">save</span> Save Changes
+          </button>
+          <button mat-stroked-button class="cancel-btn">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </div>

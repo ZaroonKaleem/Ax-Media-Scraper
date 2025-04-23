@@ -12,15 +12,22 @@
             </label>
             <input type="text" class="input-search" placeholder="Search">
         </form>
-        <a routerLink="/dashboard/apps/email/compose" class="btn" mat-button>
-            <i class="material-symbols-outlined">
-                edit
-            </i>
-            Compose
-        </a>
+        <a
+  routerLink="/dashboard/apps/email/compose"
+  class="btn"
+  mat-button
+  [ngStyle]="composeBtnStyles"
+  (mouseover)="composeBtnStyles.backgroundColor = '#3b8dcc'"
+  (mouseout)="composeBtnStyles.backgroundColor = '#49a0e7'"
+>
+  <i class="material-symbols-outlined" style="margin-right: 8px; font-size: 20px;">edit</i>
+  Compose
+</a>
+    
+
         <ul class="sidebar-list p-0 list-unstyled">
             <li>
-                <a routerLink="/dashboard/apps/email" class="d-flex align-items-center justify-content-between position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a style="color: #49a0e7;" routerLink="/dashboard/apps/email" class="d-flex align-items-center justify-content-between position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <i class="material-symbols-outlined">
                         inbox
                     </i>
@@ -127,11 +134,15 @@
                 </a>
             </li>
         </ul>
-        <button class="add-btn" type="button" mat-button>
-            <i class="material-symbols-outlined">
-                add
-            </i>
-            Add New Label
-        </button>
+        <button 
+        class="add-btn" 
+        type="button" 
+        mat-button 
+        style="color: #49a0e7; border: 1px solid #49a0e7;display: flex; align-items: center; gap: 4px; font-weight: 500;"
+      >
+        <i class="material-symbols-outlined" style="font-size: 20px;">add</i>
+        Add New Label
+      </button>
+      
     </mat-card-content>
 </mat-card>

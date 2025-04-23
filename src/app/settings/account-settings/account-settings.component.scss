@@ -1,46 +1,160 @@
-.account-settings-card {
-    h5 {
-        margin-bottom: 7px;
-    }
-    p {
-        margin-bottom: 25px;
+// .account-settings-card {
+//     h5 {
+//         margin-bottom: 7px;
+//     }
+//     p {
+//         margin-bottom: 25px;
 
-        &:last-child {
-            margin-bottom: 0;
+//         &:last-child {
+//             margin-bottom: 0;
+//         }
+//     }
+// }
+
+// @media only screen and (max-width : 767px) {
+
+//     .account-settings-card {
+//         p {
+//             margin-bottom: 17px;
+//         }
+//     }
+
+// }
+
+// @media only screen and (min-width : 576px) and (max-width : 767px) {
+
+//     .account-settings-card {
+//         p {
+//             margin-bottom: 20px;
+//         }
+//     }
+
+// }
+
+// @media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+// @media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+// @media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+// @media only screen and (min-width: 1600px) {}
+
+// Primary color
+$primary-blue: #2282d5;
+
+.settings-container {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  
+  .settings-card {
+    width: 100%;
+    max-width: 800px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    
+    .settings-header {
+      margin-bottom: 24px;
+      
+      h1 {
+        margin: 0 0 8px 0;
+        font-size: 24px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        
+        .material-symbols-outlined {
+          color: $primary-blue;
+          font-size: 28px;
         }
+      }
+      
+      p {
+        margin: 0;
+        color: #666;
+      }
     }
+    
+    .settings-form {
+      margin-top: 16px;
+      
+      .form-section {
+        margin-bottom: 32px;
+        
+        h2 {
+          font-size: 18px;
+          font-weight: 500;
+          margin: 0 0 16px 0;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          
+          .material-symbols-outlined {
+            color: $primary-blue;
+            font-size: 22px;
+          }
+        }
+        
+        mat-form-field {
+          width: 100%;
+          margin-bottom: 16px;
+        }
+        
+        mat-slide-toggle {
+          display: block;
+          margin: 12px 0;
+        }
+      }
+      
+      .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+        margin-top: 24px;
+        
+        button {
+          padding: 8px 24px;
+          border-radius: 6px;
+          font-size: 15px;
+          
+          .material-symbols-outlined {
+            margin-right: 8px;
+            font-size: 20px;
+            vertical-align: middle;
+          }
+        }
+        
+        .save-btn {
+          background-color: $primary-blue;
+          color: white;
+        }
+        
+        .cancel-btn {
+          color: $primary-blue;
+          border-color: $primary-blue;
+        }
+      }
+    }
+  }
 }
 
-/* Max width 767px */
-@media only screen and (max-width : 767px) {
-
-    .account-settings-card {
-        p {
-            margin-bottom: 17px;
+// Responsive adjustments
+@media (max-width: 600px) {
+  .settings-container {
+    padding: 16px;
+    
+    .settings-card {
+      padding: 24px;
+      
+      .form-actions {
+        flex-direction: column-reverse;
+        
+        button {
+          width: 100%;
         }
+      }
     }
-
+  }
 }
-
-/* Min width 576px to Max width 767px */
-@media only screen and (min-width : 576px) and (max-width : 767px) {
-
-    .account-settings-card {
-        p {
-            margin-bottom: 20px;
-        }
-    }
-
-}
-
-/* Min width 768px to Max width 991px */
-@media only screen and (min-width : 768px) and (max-width : 991px) {}
-
-/* Min width 992px to Max width 1199px */
-@media only screen and (min-width : 992px) and (max-width : 1199px) {}
-
-/* Min width 1200px to Max width 1399px */
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
-
-/* Min width 1600px */
-@media only screen and (min-width: 1600px) {}

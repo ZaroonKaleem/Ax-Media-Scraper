@@ -1,4 +1,4 @@
-<!-- Breadcrumb -->
+<!-- Breadcrumb
 <div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
     <h5 class="mb-0">
         My Profile
@@ -18,54 +18,100 @@
     </ol>
 </div>
 
-<!-- My Profile -->
 <div class="row">
     <div class="col-xxl-6">
 
-        <!-- Welcome -->
         <app-mp-welcome />
 
     </div>
     <div class="col-xxl-2 col-sm-4">
         
-        <!-- Total Projects -->
         <app-mp-total-projects />
 
     </div>
     <div class="col-xxl-2 col-sm-4">
 
-        <!-- Total Orders -->
         <app-mp-total-orders />
         
     </div>
     <div class="col-xxl-2 col-sm-4">
 
-        <!-- Total Revenue -->
         <app-mp-total-revenue />
         
     </div>
     <div class="col-xxl-4 col-xxxl-3">
 
-        <!-- Profile Intro -->
         <app-mp-profile-intro />
 
-        <!-- Profile Information -->
         <app-mp-profile-information />
 
-        <!-- Additional Information -->
         <app-mp-additional-information />
 
     </div>
     <div class="col-xxl-8 col-xxxl-9">
 
-        <!-- Overview -->
         <app-mp-overview />
 
-        <!-- To Do List -->
         <app-mp-to-do-list />
 
-        <!-- Recent Activity -->
         <app-mp-recent-activity />
 
     </div>
-</div>
+</div> -->
+
+
+<div class="profile-container">
+    <mat-card class="profile-card">
+      <div class="profile-header">
+        <div class="avatar-container">
+          <div class="avatar">
+            <span class="material-symbols-outlined">account_circle</span>
+          </div>
+          <button mat-icon-button class="edit-icon">
+            <span class="material-symbols-outlined">edit</span>
+          </button>
+        </div>
+        <h1>John Doe</h1>
+        <p class="email">john.doe&#64;example.com</p>
+      </div>
+  
+      <mat-divider></mat-divider>
+  
+      <div class="profile-details">
+        <div class="detail-item">
+          <span class="material-symbols-outlined icon">phone</span>
+          <div class="detail-content">
+            <h3>Phone</h3>
+            <p>+1 (555) 123-4567</p>
+          </div>
+        </div>
+  
+        <div class="detail-item">
+          <span class="material-symbols-outlined icon">location_on</span>
+          <div class="detail-content">
+            <h3>Location</h3>
+            <p>New York, USA</p>
+          </div>
+        </div>
+  
+        <div class="detail-item">
+          <span class="material-symbols-outlined icon">calendar_month</span>
+          <div class="detail-content">
+            <h3>Member Since</h3>
+            <p>January 2023</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="profile-actions">
+        <button mat-flat-button class="primary-btn">
+          <span class="material-symbols-outlined">settings</span>
+          Account Settings
+        </button>
+        <button mat-stroked-button class="secondary-btn">
+          <span class="material-symbols-outlined">logout</span>
+          Sign Out
+        </button>
+      </div>
+    </mat-card>
+  </div>

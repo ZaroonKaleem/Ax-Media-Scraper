@@ -1,0 +1,19 @@
+
+  <div class="container">
+    <div class="creator-page">
+        <!-- Section Template -->
+        <section class="creator-section" *ngFor="let section of sections; let i = index" [ngClass]="{ 'reverse': i % 2 !== 0 }">
+          <div class="text-content">
+            <h2>{{ section.title }}</h2>
+            <p>{{ section.description }}</p>
+            <button mat-raised-button color="primary">{{ section.button }}</button>
+          </div>
+          <div class="image-content">
+            <img [src]="section.image" [alt]="section.title" />
+          </div>
+        </section>
+      </div>
+    
+      <app-fp-faq />
+
+  </div>

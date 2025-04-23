@@ -1,0 +1,144 @@
+// Primary color
+$primary-blue: #2282d5;
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  
+  .profile-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    
+    .profile-header {
+      text-align: center;
+      position: relative;
+      margin-bottom: 24px;
+      
+      .avatar-container {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 16px;
+        
+        .avatar {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          background: #f0f0f0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+          
+          .material-symbols-outlined {
+            font-size: 80px;
+            color: #666;
+          }
+        }
+        
+        .edit-icon {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          background: white;
+          border: 1px solid #ddd;
+          
+          .material-symbols-outlined {
+            color: $primary-blue;
+          }
+        }
+      }
+      
+      h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      
+      .email {
+        margin: 8px 0 0;
+        color: #666;
+      }
+    }
+    
+    .profile-details {
+      margin: 24px 0;
+      
+      .detail-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 0;
+        
+        .icon {
+          font-size: 24px;
+          color: $primary-blue;
+          background: rgba($primary-blue, 0.1);
+          padding: 12px;
+          border-radius: 50%;
+        }
+        
+        .detail-content {
+          h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+          }
+          
+          p {
+            margin: 4px 0 0;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    
+    .profile-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+      
+      button {
+        flex: 1;
+        padding: 12px;
+        font-size: 15px;
+        border-radius: 6px;
+        
+        .material-symbols-outlined {
+          margin-right: 8px;
+          font-size: 20px;
+          vertical-align: middle;
+        }
+      }
+      
+      .primary-btn {
+        background-color: $primary-blue;
+        color: white;
+      }
+      
+      .secondary-btn {
+        color: $primary-blue;
+        border-color: $primary-blue;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 16px;
+    
+    .profile-card {
+      padding: 24px;
+      
+      .profile-actions {
+        flex-direction: column;
+      }
+    }
+  }
+}

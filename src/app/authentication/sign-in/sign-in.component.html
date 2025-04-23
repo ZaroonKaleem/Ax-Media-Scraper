@@ -7,7 +7,60 @@
         [class.component-dark-theme]="themeService.isDark()"
         [class.component-rtl-enabled]="themeService.isRTLEnabled()"
     >
-        <div class="row align-items-center">
+    <div class="login-container">
+        <mat-card class="login-card">
+          <div class="logo-section">
+            <span class="material-symbols-outlined logo-icon">lock</span>
+            <h1>Welcome Back</h1>
+            <p>Sign in to your account</p>
+          </div>
+      
+          <form class="login-form" [formGroup]="loginForm">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" placeholder="Enter your email">
+              <mat-icon matSuffix class="material-symbols-outlined">mail</mat-icon>
+            </mat-form-field>
+      
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="password" placeholder="Enter your password">
+              <mat-icon matSuffix class="material-symbols-outlined">key</mat-icon>
+            </mat-form-field>
+      
+            <div class="remember-forgot">
+              <mat-checkbox color="primary">Remember me</mat-checkbox>
+              <a class="forgot-password">Forgot password?</a>
+            </div>
+      
+            <button mat-flat-button class="login-button" type="submit">
+              Sign In
+            </button>
+      
+            <div class="divider">
+              <mat-divider></mat-divider>
+              <span>or</span>
+              <mat-divider></mat-divider>
+            </div>
+      
+            <div class="social-login">
+              <button mat-stroked-button class="google-btn">
+                <img src="assets/google-icon.svg" alt="Google" class="social-icon">
+                Continue with Google
+              </button>
+              <button mat-stroked-button class="facebook-btn">
+                <img src="assets/facebook-icon.svg" alt="Facebook" class="social-icon">
+                Continue with Facebook
+              </button>
+            </div>
+      
+            <div class="signup-link">
+              Don't have an account? <a routerLink="/signup">Sign up</a>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+        <!-- <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                 <div class="form-image">
                     <img src="images/sign-in.jpg" alt="sign-in-image">
@@ -89,6 +142,6 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

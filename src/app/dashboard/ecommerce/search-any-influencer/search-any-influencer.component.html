@@ -1,0 +1,30 @@
+<h2 mat-dialog-title class="dialog-title">Find Influencers</h2>
+<mat-dialog-content class="dialog-content">
+
+  <mat-form-field appearance="outline" class="full-width input-field">
+    <mat-label>Search Influencer</mat-label>
+    <input matInput [(ngModel)]="searchTerm" (input)="filterInfluencers()" placeholder="Type name..." />
+  </mat-form-field>
+
+  <mat-button-toggle-group [(ngModel)]="platformFilter" class="filter-buttons" appearance="legacy" color="primary">
+    <mat-button-toggle value="all">All</mat-button-toggle>
+    <mat-button-toggle value="instagram">Instagram</mat-button-toggle>
+    <mat-button-toggle value="tiktok">TikTok</mat-button-toggle>
+    <mat-button-toggle value="youtube">YouTube</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <div *ngIf="filteredInfluencers.length; else noResults" class="list-container">
+    <mat-list>
+      <mat-list-item *ngFor="let influencer of filteredInfluencers">
+        <div class="influencer-info">
+          <h4 matLine>{{ influencer.name }}</h4>
+          <p matLine class="platform">{{ influencer.platform | titlecase }}</p>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <ng-template #noResults>
+    <p class="text-muted">No influencers found.</p>
+  </ng-template>
+</mat-dialog-content>

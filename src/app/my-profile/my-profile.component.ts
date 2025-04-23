@@ -10,11 +10,13 @@ import { MpAdditionalInformationComponent } from './mp-additional-information/mp
 import { MpRecentActivityComponent } from './mp-recent-activity/mp-recent-activity.component';
 import { MpToDoListComponent } from './mp-to-do-list/mp-to-do-list.component';
 import { MpOverviewComponent } from './mp-overview/mp-overview.component';
+import { MatCard } from '@angular/material/card';
+import { MatDivider } from '@angular/material/divider';
 
 @Component({
     selector: 'app-my-profile',
     standalone: true,
-    imports: [RouterLink, MpWelcomeComponent, MpTotalProjectsComponent, MpTotalOrdersComponent, MpTotalRevenueComponent, MpProfileIntroComponent, MpProfileInformationComponent, MpAdditionalInformationComponent, MpRecentActivityComponent, MpToDoListComponent, MpOverviewComponent],
+    imports: [MatCard,MatDivider],
     templateUrl: './my-profile.component.html',
     styleUrl: './my-profile.component.scss'
 })

@@ -13,7 +13,7 @@
         <a routerLink="/dashboard" class="d-flex align-items-center position-relative">
             <img src="images/logo.png" class="transition position-relative" style="width: 50px;" alt="logo-icon">
             <span style="font-size: 0.8rem;" class="fw-bold text-black lh-1 transition position-relative">
-                AxSocialMediaScraper
+                Ax Media Scraper
             </span>
         </a>
     </div>
@@ -30,17 +30,122 @@
         <div class="sidebar-inner">
             <div class="sidebar-menu">
                 <mat-accordion>
-                    <span class="sub-title d-block fw-medium text-uppercase">
+                    <!-- <span class="sub-title d-block fw-medium text-uppercase">
                         MAIN
-                    </span>
-                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                    </span> -->
+                    <a routerLink="/dashboard" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <i class="material-symbols-outlined">
+                            search
+                        </i>
+                        <span class="title">
+                            Search
+                        </span>
+                    </a>
+
+                    <a routerLink="/dashboard/lists" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <i class="material-symbols-outlined">
+                            list
+                        </i>
+                        <span class="title">
+                            Lists
+                        </span>
+                    </a>
+
+                    <a routerLink="/dashboard/apps/email" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <i class="material-symbols-outlined">
+                            mail
+                        </i>
+                        <span class="title">
+                            Email
+                        </span>
+                    </a>
+
+                    <mat-expansion-panel class="single-arrow-panel" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            <i class="material-symbols-outlined">language</i>
+                            <span class="title">Language</span>
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        
+                        <ul style="list-style-type: disc; padding-left: 24px; margin: 8px 0;">
+                            <li style="margin-bottom: 8px;">
+                              <a 
+                                (click)="changeLanguage('en')" 
+                                cursor-pointer
+                                style="color: #333; text-decoration: none; display: block; padding: 4px 0;"
+                                onmouseover="this.style.color='#007bff'" 
+                                onmouseout="this.style.color='#333'"
+                              >
+                                English
+                              </a>
+                            </li>
+                            <li style="margin-bottom: 8px;">
+                              <a 
+                                (click)="changeLanguage('fr')" 
+                                cursor-pointer
+                                style="color: #333; text-decoration: none; display: block; padding: 4px 0;"
+                                onmouseover="this.style.color='#007bff'" 
+                                onmouseout="this.style.color='#333'"
+                              >
+                                Français
+                              </a>
+                            </li>
+                          </ul>
+                      </mat-expansion-panel>
+                    
+                      <mat-expansion-panel class="single-arrow-panel" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
                                 <i class="material-symbols-outlined">
-                                    dashboard
+                                    local_offer
                                 </i>
                                 <span class="title">
-                                    Dashboard
+                                    Offers
+                                </span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ul class="sidebar-sub-menu">
+                            <li class="sidemenu-item">
+                                <a routerLink="/dashboard/offers/proposals" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    My Proposals
+                                </a>
+                            </li>
+                            <li class="sidemenu-item">
+                                <a routerLink="/dashboard/offers/my-campaign" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    My Campaign Offers
+                                </a>
+                            </li>
+                            <li class="sidemenu-item">
+                                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    Marketplace
+                                </a>
+                            </li>
+                            <li class="sidemenu-item">
+                                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    Create Campaign Offer
+                                </a>
+                            </li>
+                        </ul>
+                    </mat-expansion-panel>
+
+                    <a routerLink="/dashboard/media" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <i class="material-symbols-outlined">
+                            collections
+                        </i>
+                        <span class="title">
+                            Media Gallery
+                        </span>
+                    </a>
+
+                      <!-- <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <i class="material-symbols-outlined">
+                                    search
+                                </i>
+                                <span class="title">
+                                    Search
                                 </span>
                                 <span class="trezo-badge rounded-circle fw-medium d-inline-block text-center">
                                     9
@@ -112,8 +217,9 @@
                                 </a>
                             </li>
                         </ul>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                    </mat-expansion-panel> -->
+                    
+                    <!-- <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
                                 <i class="material-symbols-outlined">
@@ -278,8 +384,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </mat-expansion-panel>
-                    <span class="sub-title d-block fw-medium text-uppercase">
+                    </mat-expansion-panel> -->
+                    <!-- <span class="sub-title d-block fw-medium text-uppercase">
                         PAGES
                     </span>
                     <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
@@ -714,8 +820,8 @@
                         <span class="title">
                             Starter
                         </span>
-                    </a>
-                    <span class="sub-title d-block fw-medium text-uppercase">
+                    </a> -->
+                    <!-- <span class="sub-title d-block fw-medium text-uppercase">
                         MODULES
                     </span>
                     <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
@@ -1266,7 +1372,7 @@
                         <span class="title">
                             Members
                         </span>
-                    </a>
+                    </a> -->
                     <span class="sub-title d-block fw-medium text-uppercase">
                         OTHERS
                     </span>
@@ -1278,7 +1384,7 @@
                             My Profile
                         </span>
                     </a>
-                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                    <mat-expansion-panel class="single-arrow-panel" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
                                 <i class="material-symbols-outlined">
@@ -1317,7 +1423,7 @@
                             </li>
                         </ul>
                     </mat-expansion-panel>
-                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                    <!-- <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
                                 <i class="material-symbols-outlined">
@@ -1376,8 +1482,8 @@
                                 </li>
                             </ul>
                         </mat-accordion>
-                    </mat-expansion-panel>
-                    <a routerLink="/authentication/logout" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    </mat-expansion-panel> -->
+                    <a routerLink="/" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                         <i class="material-symbols-outlined">
                             logout
                         </i>

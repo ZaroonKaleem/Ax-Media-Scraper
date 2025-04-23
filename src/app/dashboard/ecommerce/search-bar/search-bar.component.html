@@ -4,27 +4,34 @@
       <div class="search-bar-container">
         <!-- Platform Dropdown -->
         <div class="search-bar-container2">
-            <!-- <select class="platform-dropdown">
-              <option value="instagram" selected><img src="assets/images/instagram.png" alt="Instagram" style="width: 20px; height: 20px;">Instagram</option>
-              <option value="facebook"><img src="assets/images/tiktok.png" alt="tiktok" style="width: 20px; height: 20px;">Tiktok</option>
-              <option value="youtube"><img src="assets/images/youtube.png" alt="YouTube" style="width: 20px; height: 20px;">YouTube</option>
-            </select> -->
-
-            <mat-form-field appearance="fill" class="platform-dropdown">
-                <mat-label>Choose Platform</mat-label>
-                <mat-select [(value)]="selectedPlatform">
-                  <mat-option *ngFor="let platform of platforms" [value]="platform.value">
-                    <img [src]="platform.icon" alt="{{ platform.label }}" class="option-icon" style="width: 15px; height: 15px;" />
-                    {{ platform.label }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-              
+   
+            <div class="custom-dropdown" (click)="toggleDropdown()" [class.open]="isOpen">
+                <div class="selected-option">
+                  <img *ngIf="selectedOption" [src]="selectedOption.image" alt="Selected" />
+                  {{ selectedOption.label || 'Select an option' }}
+                  <span class="arrow">&#9662;</span>
+                </div>
+                <ul class="options-list" [ngClass]="{'open': isOpen}">
+                  <li
+                    *ngFor="let option of options"
+                    style="padding: 10px;"
+                    (click)="selectOption(option, $event)"
+                  >
+                    <img [src]="option.image" alt="{{ option.label }}" />
+                    {{ option.label }}
+                  </li>
+                </ul>
+              </div>        
             
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search by category or keyword" />
+              <div class="search-container">
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Search by category or keyword" />
+                <span class="search-icon">
+                  🔍
+                </span>
+              </div>
           </div>
           
         <!-- Filters -->

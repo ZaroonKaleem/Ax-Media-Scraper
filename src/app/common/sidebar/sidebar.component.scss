@@ -1,4 +1,15 @@
 ::ng-deep {
+
+    .single-arrow-panel {
+        .mat-expansion-indicator::after {
+          display: none;
+        }
+        
+        .mat-expansion-indicator {
+          margin-left: 0;
+        }
+      }
+
     .sidebar-area {
         overflow: hidden;
         position: fixed;
