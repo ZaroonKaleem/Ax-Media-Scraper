@@ -30,11 +30,11 @@ export class SidebarComponent {
     this.isLanguageMenuOpen = !this.isLanguageMenuOpen;
   }
 
-  changeLanguage(language: string) {
-    // Change the language logic here, such as using a service to set the language
-    console.log('Language changed to:', language);
-    this.isLanguageMenuOpen = false; // Close the language menu after selection
-  }
+  // changeLanguage(language: string) {
+  //   // Change the language logic here, such as using a service to set the language
+  //   console.log('Language changed to:', language);
+  //   this.isLanguageMenuOpen = false; // Close the language menu after selection
+  // }
 
     // Mat Expansion
     readonly panelOpenState = signal(false);
