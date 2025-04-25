@@ -216,7 +216,7 @@ import { MediaGalleryComponent } from './dashboard/ecommerce/media-gallery/media
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'pages',
         component: FrontPagesComponent,
         children: [
             {path: '', component: HomeComponent},
@@ -228,7 +228,7 @@ export const routes: Routes = [
         ]
     },
     {
-        path: 'dashboard',
+        path: '',
         component: DashboardComponent,
         children: [
             {path: '', component: EcommerceComponent},

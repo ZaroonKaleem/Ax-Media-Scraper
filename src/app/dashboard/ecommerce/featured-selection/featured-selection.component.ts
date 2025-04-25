@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+import { MatCard, MatCardContent, MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatTable, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -8,7 +8,7 @@ import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-featured-selection',
   standalone: true,
-  imports: [MatCardModule,CommonModule,MatTableModule,MatPaginator],
+  imports: [MatCardModule,CommonModule,MatTableModule,MatPaginator, MatCard,MatCardContent],
   templateUrl: './featured-selection.component.html',
   styleUrl: './featured-selection.component.scss'
 })
@@ -34,5 +34,11 @@ export class FeaturedSelectionComponent {
       link: '#'
     }
   ];
+
+  applyFilter(event: Event): void {
+    // const filterValue = (event.target as HTMLInputElement).value;
+    // this.dataSource.filter = filterValue.trim().toLowerCase();
+}
+
 
 }
