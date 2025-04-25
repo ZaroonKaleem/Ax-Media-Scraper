@@ -237,3 +237,38 @@
     }
   }
   
+
+
+
+
+  @media screen and (max-width: 992px) {
+    .search-bar-container {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+  
+    .search-bar-container2 {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+  
+    .filters {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+  
+    .search-btn {
+      width: 100%;
+      align-self: center;
+    }
+  
+    .search-container,
+    .custom-dropdown {
+      width: 100%;
+    }
+  }
+  
