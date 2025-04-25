@@ -13,6 +13,8 @@ import { MatSelect } from '@angular/material/select';
   styleUrl: './search-bar.component.scss'
 })
 export class SearchBarComponent {
+
+  
   isOpen = false;
   options = [
     { label: 'Instagram', image: 'images/ax/instagram.png' },
