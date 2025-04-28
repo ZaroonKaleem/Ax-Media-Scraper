@@ -1,62 +1,100 @@
 <div class="card-wrapper">
-    <div class="search-wrapper">
-      <div class="search-bar-container">
-        <!-- Platform Dropdown -->
-        <div class="search-bar-container2">
-   
-            <div class="custom-dropdown" (click)="toggleDropdown()" [class.open]="isOpen">
-                <div class="selected-option">
-                  <img *ngIf="selectedOption" [src]="selectedOption.image" alt="Selected" />
-                  {{ selectedOption.label || 'Select an option' }}
-                  <span class="arrow">&#9662;</span>
-                </div>
-                <ul class="options-list" [ngClass]="{'open': isOpen}">
-                  <li
-                    *ngFor="let option of options"
-                    style="padding: 10px;"
-                    (click)="selectOption(option, $event)"
-                  >
-                    <img [src]="option.image" alt="{{ option.label }}" />
-                    {{ option.label }}
-                  </li>
-                </ul>
-              </div>        
-            
-              <div class="search-container">
-                <input
-                  type="text"
-                  class="search-input"
-                  placeholder="Search by category or keyword" />
-                <span class="search-icon">
-                  🔍
-                </span>
-              </div>
+  <div class="search-wrapper">
+    <div class="search-bar-container">
+      <!-- Platform Dropdown -->
+      <div class="search-bar-container2">
+
+        <div class="custom-dropdown" (click)="toggleDropdown()" [class.open]="isOpen">
+          <div class="selected-option">
+            <img *ngIf="selectedOption" [src]="selectedOption.image" alt="Selected" />
+            <span class="arrow">&#9662;</span>
           </div>
-          
-        <!-- Filters -->
-        <div class="filters">
-          <select>
-            <option>Followers</option>
-            <option>10K+</option>
-            <option>50K+</option>
-          </select>
-          <select>
-            <option>Engagement</option>
-            <option>High</option>
-            <option>Medium</option>
-          </select>
-          <select>
-            <option>Location</option>
-            <option>USA</option>
-            <option>UK</option>
-          </select>
-          <select>
-            <option>All Filters</option>
-          </select>
+          <ul class="options-list" [ngClass]="{'open': isOpen}">
+            <li *ngFor="let option of options" style="padding: 10px;" (click)="selectOption(option, $event)">
+              <img [src]="option.image" alt="{{ option.label }}" />
+              <!-- {{ option.label }} -->
+            </li>
+          </ul>
         </div>
 
-        <!-- Search Button -->
-        <button class="search-btn">Search</button>
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+
+          <div class="chip-input-wrapper">
+            <div class="chip" *ngFor="let tag of selectedHashtags">
+              {{ tag }}
+              <span class="remove-chip" (click)="removeHashtag(tag)">×</span>
+            </div>
+            <input type="text" class="search-input" placeholder="#tag" [(ngModel)]="searchText" (focus)="focusInput()"
+              (blur)="blurInput()" (input)="onInputChange()" (keydown)="handleKeyDown($event)" />
+          </div>
+
+          <div class="suggestions" *ngIf="showSuggestions && filteredHashtags.length > 0">
+            <div class="suggestion" *ngFor="let hashtag of filteredHashtags" (click)="addHashtag(hashtag)">
+              {{ hashtag }}
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Filters -->
+      <div class="filters">
+        <!-- <select [(ngModel)]="selectedCountry" (change)="onCountryChange()">
+          <option value="" disabled selected>Select Country</option>
+          <option *ngFor="let country of countries" [value]="country.name">
+            {{ country.name }}
+          </option>
+        </select>
+      
+        
+        <select [(ngModel)]="selectedCity" [disabled]="!selectedCountry">
+          <option value="" disabled selected>Select City</option>
+          <option *ngFor="let city of citiesForSelectedCountry" [value]="city">
+            {{ city }}
+          </option>
+        </select> -->
+        <div *ngIf="selectedCountry" class="selected-country-chip">
+          {{ selectedCountry }}
+          <span class="remove-chip" (click)="removeSelectedCountry()">×</span>
+        </div>
+      
+        <!-- Country Dropdown (only visible when no country is selected) -->
+        <select *ngIf="!selectedCountry" [(ngModel)]="selectedCountry" (change)="onCountrySelected()">
+          <option value="" disabled selected>Select Country</option>
+          <option *ngFor="let country of countries" [value]="country.name">
+            {{ country.name }}
+          </option>
+        </select>
+      
+        <!-- City Dropdown (only visible when a country is selected) -->
+        <div *ngIf="selectedCountry">
+          <select [(ngModel)]="selectedCity" class="dropdown" [disabled]="!showCityDropdown">
+            <option value="" disabled selected>Select City</option>
+            <option *ngFor="let city of citiesForSelectedCountry" [value]="city">
+              {{ city }}
+            </option>
+          </select>
+        </div>
+        
+<div>
+  <select class="dropdown">
+    <option>Subscribers</option>
+    <option>1K-10K</option>
+    <option>10K-50K</option>
+    <option>50K-100K</option>
+    <option>100K-500K</option>
+    <option>500K-1M</option>
+    <option>1M+</option>
+  </select>
+</div>
+  
+      </div>
+
+      <!-- Search Button -->
+      <button class="search-btn">Reset</button>
+      <button class="search-btn">Fetch Data</button>
+      <button class="search-btn">Save</button>
+      <button class="search-btn">Search</button>
     </div>
+  </div>
 </div>
