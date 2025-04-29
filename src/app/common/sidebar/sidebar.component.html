@@ -13,7 +13,7 @@
         <a routerLink="/dashboard" class="d-flex align-items-center position-relative">
             <img src="images/logo.png" class="transition position-relative" style="width: 50px;" alt="logo-icon">
             <span style="font-size: 0.8rem;" class="fw-bold text-black lh-1 transition position-relative">
-                Ax Media Scraper
+                Cranberry Shallows
             </span>
         </a>
     </div>
@@ -33,6 +33,14 @@
                     <!-- <span class="sub-title d-block fw-medium text-uppercase">
                         MAIN
                     </span> -->
+                    <a routerLink="/" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <i class="material-symbols-outlined">
+                            dashboard
+                        </i>
+                        <span class="title">
+                            Dsashboard
+                        </span>
+                    </a>
                     <a routerLink="/dashboard" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                         <i class="material-symbols-outlined">
                             search
@@ -41,18 +49,25 @@
                             Search
                         </span>
                     </a>
-
+                    <a routerLink="/dashboard/lists" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <i class="material-symbols-outlined">
+                            group
+                        </i>
+                        <span class="title">
+                            User Management
+                        </span>
+                    </a>
                     <!-- uncomment -->
-                    <!-- <a routerLink="/dashboard/lists" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                     <!-- <a routerLink="/dashboard/lists" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                         <i class="material-symbols-outlined">
                             list
                         </i>
                         <span class="title">
                             Lists
                         </span>
-                    </a>
+                    </a> -->
 
-                    <a routerLink="/dashboard/apps/email" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <!-- <a routerLink="/dashboard/apps/email" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                         <i class="material-symbols-outlined">
                             mail
                         </i>
@@ -1485,12 +1500,12 @@
                         </mat-accordion>
                     </mat-expansion-panel> -->
                     <!-- uncomment  -->
-                    <!-- <a routerLink="/" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a routerLink="/log" class="sidebar-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                         <i class="material-symbols-outlined">
                             logout
                         </i>
                         <span class="title">Logout</span>
-                    </a> -->
+                    </a>
                 </mat-accordion>
             </div>
         </div>

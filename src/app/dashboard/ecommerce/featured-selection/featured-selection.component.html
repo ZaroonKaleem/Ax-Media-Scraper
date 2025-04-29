@@ -1,33 +1,3 @@
-<!-- <div class="featured-selection-container">
-    <h2 class="main-heading">Featured Selection</h2>
-  
-    <div class="cards-grid">
-      <mat-card class="featured-card">
-        <mat-card-title>Top Fashion Instagramers in Pakistan</mat-card-title>
-      </mat-card>
-  
-      <mat-card class="featured-card">
-        <mat-card-title>Top Lifestyle Tiktokers in Pakistan</mat-card-title>
-      </mat-card>
-  
-      <mat-card class="featured-card">
-        <mat-card-title>Top Fitness Youtubers in Pakistan</mat-card-title>
-      </mat-card>
-  
-      <mat-card class="featured-card">
-        <mat-card-title>Top Instagramers in Madrid</mat-card-title>
-      </mat-card>
-  
-      <mat-card class="featured-card">
-        <mat-card-title>Top Youtubers in New York</mat-card-title>
-      </mat-card>
-  
-      <mat-card class="featured-card">
-        <mat-card-title>Top Tiktokers in Tokyo</mat-card-title>
-      </mat-card>
-    </div>
-  </div>
-   -->
 
    <mat-card class="users-list-card table-style-two mb-25 border-radius d-block bg-white border-0 shadow-none">
     <mat-card-header>
@@ -49,20 +19,25 @@
           <ng-container matColumnDef="image">
             <th mat-header-cell *matHeaderCellDef> Image </th>
             <td mat-cell *matCellDef="let result">
-              <img [src]="result.image" alt="{{ result.name }}" class="result-image" />
+              <img [src]="result.image" alt="{{ result.image }}" class="result-image" />
             </td>
           </ng-container>
   
           <!-- Name Column -->
           <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <th mat-header-cell *matHeaderCellDef> Profile Name </th>
             <td mat-cell *matCellDef="let result">{{ result.name }}</td>
           </ng-container>
-  
+
+          <ng-container matColumnDef="followers">
+            <th mat-header-cell *matHeaderCellDef> Followers </th>
+            <td mat-cell *matCellDef="let result">{{ result.followers }}</td>
+          </ng-container>
+          
           <!-- Description Column -->
           <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef> Description </th>
-            <td mat-cell *matCellDef="let result">{{ result.description }}</td>
+            <th mat-header-cell *matHeaderCellDef> Hashtags </th>
+            <td mat-cell *matCellDef="let result">{{ result.hashtags }}</td>
           </ng-container>
   
           <!-- Link Column -->

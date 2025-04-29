@@ -92,10 +92,10 @@ export class SearchBarComponent {
 
     isOpen = false;
     options = [
-        { label: 'YouTube', image: 'images/ax/youtube.png' },
-        { label: 'Instagram', image: 'images/ax/instagram.png' },
         { label: 'Facebook', image: 'images/ax/facebook.png' },
+        { label: 'Instagram', image: 'images/ax/instagram.png' },
         { label: 'Tiktok', image: 'images/ax/tiktok.png' },
+        { label: 'YouTube', image: 'images/ax/youtube.png' },
     ];
 
     selectedOption = this.options[0]; // Instagram by default
