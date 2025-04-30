@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { NgClass, NgIf } from '@angular/common';
 import { ToggleService } from '../header/toggle.service';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
@@ -16,6 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
     styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+
 
     openInfluencerSearch() {
         this.dialog.open(SearchAnyInfluencerComponent, {
@@ -36,6 +37,12 @@ export class SidebarComponent {
   //   this.isLanguageMenuOpen = false; // Close the language menu after selection
   // }
 
+  onLogin() {
+    // Add your authentication logic here first
+    // For example, after successful authentication:
+    this.router.navigate(['/dashboard']);
+  }
+
     // Mat Expansion
     readonly panelOpenState = signal(false);
 
@@ -48,7 +55,8 @@ export class SidebarComponent {
     constructor(
         private toggleService: ToggleService,
         public themeService: CustomizerSettingsService,
-        private dialog: MatDialog
+        private dialog: MatDialog,
+        private router: Router
     ) {
         this.toggleService.isSidebarToggled$.subscribe(isSidebarToggled => {
             this.isSidebarToggled = isSidebarToggled;

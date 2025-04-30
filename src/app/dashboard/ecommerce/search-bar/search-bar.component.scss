@@ -1,3 +1,57 @@
+.chip-input-wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.default-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.expanded-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.chip {
+  background-color: #49a0e7;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  cursor: default;
+  height: 28px;
+}
+
+.chip.counter {
+  background-color: #e0e0e0;
+  color: #333;
+  cursor: pointer;
+}
+
+.remove-chip {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+  .expanded-chips {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .search-wrapper {
   display: flex;
   justify-content: center;
@@ -347,3 +401,121 @@
 .dropdown {
   height: 40px;
 }
+
+/* Add these new styles and modify existing ones */
+
+/* New mobile detection class */
+.mobile-view .chip-input-wrapper {
+  overflow: hidden;
+}
+
+.mobile-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.desktop-chips {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip.counter {
+  background-color: #e0e0e0;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Update media queries */
+@media screen and (max-width: 768px) {
+  .search-bar-container {
+    padding: 1rem;
+  }
+
+  .search-bar-container2 {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .custom-dropdown {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-container {
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 0.5rem;
+    
+    select, .dropdown {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    
+    .search-btn {
+      flex: 1 1 calc(50% - 0.5rem);
+      min-width: 120px;
+    }
+  }
+
+  /* Hide desktop chips on mobile */
+  .desktop-chips {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  /* Hide mobile chips on desktop */
+  .mobile-chips {
+    display: none;
+  }
+}
+
+/* Rest of your existing CSS remains the same */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.search-bar-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.data-btn {
+  background-color: #49a0e7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  gap: 0.5rem;
+  margin-right:0.5rem;
+
+  &:hover {
+    background-color: darken(#49a0e7, 10%);
+  }
+}
+/* ... (keep all your other existing CSS rules) ... */

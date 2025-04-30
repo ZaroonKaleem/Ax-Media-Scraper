@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,8 @@ import { FormsModule } from '@angular/forms';
     templateUrl: './search-bar.component.html',
     styleUrl: './search-bar.component.scss',
 })
-export class SearchBarComponent {
+export class SearchBarComponent implements OnInit, OnDestroy {
+    private isBrowser: boolean;
     hashtags: string[] = [
         '#technology',
         '#gaming',
@@ -40,7 +41,9 @@ export class SearchBarComponent {
     citiesForSelectedCountry: string[] = [];
   
     showCityDropdown = false;
-  
+    constructor(@Inject(PLATFORM_ID) platformId: Object) {
+        this.isBrowser = isPlatformBrowser(platformId);
+      }
     // This function is triggered when the country is selected
     onCountrySelected() {
       const selected = this.countries.find(c => c.name === this.selectedCountry);
@@ -57,27 +60,38 @@ export class SearchBarComponent {
       this.showCityDropdown = false;
       this.citiesForSelectedCountry = [];
     }
-    // countries = [
-    //   { name: 'USA', cities: ['New York', 'Los Angeles', 'Chicago', 'Miami'] },
-    //   { name: 'Canada', cities: ['Toronto', 'Vancouver', 'Montreal', 'Calgary'] },
-    //   { name: 'UK', cities: ['London', 'Manchester', 'Birmingham', 'Liverpool'] },
-    //   { name: 'Australia', cities: ['Sydney', 'Melbourne', 'Brisbane', 'Perth'] }
-    // ];
-  
-    // selectedCountry: string = '';
-    // selectedCity: string = '';
-    // citiesForSelectedCountry: string[] = [];
-  
-    // onCountryChange() {
-    //   const country = this.countries.find(c => c.name === this.selectedCountry);
-    //   this.citiesForSelectedCountry = country ? country.cities : [];
-    //   this.selectedCity = ''; // Reset city on country change
-    // }
-
+    isMobileView = false;
     searchText = '';
     selectedHashtags: string[] = [];
     showSuggestions = false;
     filteredHashtags: string[] = [...this.hashtags];
+
+    ngOnInit() {
+        if (this.isBrowser) {
+          this.checkMobileView();
+          window.addEventListener('resize', this.checkMobileView.bind(this));
+        }
+      }
+    
+      ngOnDestroy() {
+        if (this.isBrowser) {
+          window.removeEventListener('resize', this.checkMobileView.bind(this));
+        }
+      }
+
+      checkMobileView() {
+        if (typeof window !== 'undefined') {
+          this.isMobileView = window.innerWidth <= 768;
+        }
+    }
+
+    maxVisibleChips = 1; // Show 1 chip by default
+isExpanded = false;
+
+toggleExpanded() {
+  this.isExpanded = !this.isExpanded;
+  this.maxVisibleChips = this.isExpanded ? this.selectedHashtags.length : 1;
+}
 
     focusInput() {
         this.showSuggestions = true;

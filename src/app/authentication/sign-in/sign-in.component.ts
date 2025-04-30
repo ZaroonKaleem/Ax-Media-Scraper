@@ -9,6 +9,7 @@ import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-sign-in',
@@ -30,6 +31,11 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class SignInComponent {
 
+  onLogin() {
+    // Add your authentication logic here first
+    // For example, after successful authentication:
+    this.router.navigate(['/dashboard']);
+  }
     // Password Hide
     hide = true;
 
@@ -40,7 +46,8 @@ export class SignInComponent {
 
     constructor(
         public themeService: CustomizerSettingsService,
-        private fb: FormBuilder
+        private fb: FormBuilder,
+        private router: Router
     ) {
         this.themeService.isToggled$.subscribe(isToggled => {
             this.isToggled = isToggled;
