@@ -36,6 +36,14 @@ export class SignInComponent {
     // For example, after successful authentication:
     this.router.navigate(['/dashboard']);
   }
+  SignUp(){
+    this.router.navigate(['/authentication/sign-up'])
+  }
+  testClick() {
+    console.log('Button clicked!');
+    this.router.navigate(['/authentication/sign-up'])
+
+  }
     // Password Hide
     hide = true;
 

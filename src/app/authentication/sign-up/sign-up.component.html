@@ -1,4 +1,4 @@
-<div
+<!-- <div
     class="sign-up-area"
     [class.dark-theme]="themeService.isDark()"
 >
@@ -100,4 +100,95 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+<div
+  class="sign-in-area"
+  [class.dark-theme]="themeService.isDark()"
+>
+  <div
+    class="trezo-form ml-auto mr-auto"
+    [class.component-dark-theme]="themeService.isDark()"
+    [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+  >
+    <div class="login-container">
+      <mat-card class="login-card">
+        <div class="logo-section">
+          <span class="material-symbols-outlined logo-icon">person_add</span>
+          <h1>Create an Account</h1>
+          <p>Get started with Trezo</p>
+        </div>
+
+        <form class="login-form" [formGroup]="signupForm">
+          <!-- Email -->
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder="Enter your email" required>
+            <mat-icon matSuffix class="material-symbols-outlined">mail</mat-icon>
+          </mat-form-field>
+
+          <!-- Name -->
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="name" placeholder="Enter your name" required>
+            <mat-icon matSuffix class="material-symbols-outlined">person</mat-icon>
+          </mat-form-field>
+
+          <!-- Password -->
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" placeholder="Create a password" required>
+            <mat-icon matSuffix class="material-symbols-outlined">key</mat-icon>
+          </mat-form-field>
+
+          <!-- Role Permissions (Admin-only) -->
+          <ng-container *ngIf="isAdmin">
+            <h3 class="permissions-title">Role Permissions</h3>
+            
+            <!-- Export Permission -->
+            <div class="permission-toggle">
+              <span>Allow Export</span>
+              <mat-slide-toggle formControlName="allowExport" color="primary"></mat-slide-toggle>
+            </div>
+
+            <!-- Fetch Record Permission -->
+            <div class="permission-toggle">
+              <span>Allow Fetch Records</span>
+              <mat-slide-toggle formControlName="allowFetch" color="primary"></mat-slide-toggle>
+            </div>
+
+            <!-- Social Media Platforms -->
+            <h3 class="permissions-title">Social Media Access</h3>
+            <mat-selection-list formControlName="socialPlatforms">
+              <mat-list-option value="facebook">Facebook</mat-list-option>
+              <mat-list-option value="twitter">Twitter</mat-list-option>
+              <mat-list-option value="instagram">Instagram</mat-list-option>
+              <mat-list-option value="linkedin">LinkedIn</mat-list-option>
+            </mat-selection-list>
+          </ng-container>
+
+          <!-- Signup Button -->
+          <button 
+            mat-flat-button 
+            class="login-button" 
+            (click)="onSignup()" 
+            type="submit"
+          >
+            Sign Up
+          </button>
+
+          <!-- <div class="divider">
+            <mat-divider></mat-divider>
+            <span>or</span>
+            <mat-divider></mat-divider>
+          </div>
+
+          <div class="signup-link">
+            Already have an account? <a routerLink="/login">Sign In</a>
+          </div> -->
+        </form>
+      </mat-card>
+    </div>
+  </div>
 </div>
