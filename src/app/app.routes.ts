@@ -213,6 +213,7 @@ import { OffersComponent } from './dashboard/ecommerce/offers/offers.component';
 import { ProposalsComponent } from './dashboard/ecommerce/offers/proposals/proposals.component';
 import { MyCapaignComponent } from './dashboard/ecommerce/offers/my-capaign/my-capaign.component';
 import { MediaGalleryComponent } from './dashboard/ecommerce/media-gallery/media-gallery.component';
+import { UserManagementComponent } from './dashboard/ecommerce/user-management/user-management.component';
 
 export const routes: Routes = [
     {
@@ -549,6 +550,7 @@ export const routes: Routes = [
             {path: 'lists', component: ListsComponent},
             {path: 'check-influencer', component: SearchAnyInfluencerComponent},
             {path: 'media', component: MediaGalleryComponent},
+            {path: 'user-management', component: UserManagementComponent},
             // {path: 'crm', component: CrmComponent},
             // {path: 'project-management', component: ProjectManagementComponent},
             // {path: 'lms', component: LmsComponent},

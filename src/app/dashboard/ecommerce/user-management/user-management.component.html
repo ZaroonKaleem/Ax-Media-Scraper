@@ -1,0 +1,391 @@
+<!-- <mat-card
+  class="dt-top-performers-card mb-25 border-radius d-block bg-white border-0 shadow-none"
+  [class.component-rtl-enabled]="themeService.isRTLEnabled()"
+>
+  <mat-card-header>
+    <mat-card-title>
+      <h5 class="mb-0">Top Performers</h5>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <button
+        mat-button
+        [matMenuTriggerFor]="cardHeaderMenu"
+        class="card-header-menu without-border d-inline-block border-radius"
+      >
+        This Week
+      </button>
+      <mat-menu #cardHeaderMenu="matMenu" class="card-header-menu" xPosition="before">
+        <ul class="p-0 mt-0 mb-0 list-unstyled">
+          <li><button mat-menu-item>This Week</button></li>
+          <li><button mat-menu-item>This Month</button></li>
+          <li><button mat-menu-item>This Year</button></li>
+        </ul>
+      </mat-menu>
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <button mat-raised-button color="primary" (click)="onAddUser()">Add New User</button>
+      <mat-form-field appearance="outline" class="mb-0">
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search users..." />
+      </mat-form-field>
+    </div>
+
+    <div class="table-responsive">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
+
+        <ng-container matColumnDef="user">
+          <th mat-header-cell *matHeaderCellDef>User</th>
+          <td mat-cell *matCellDef="let element">
+            <div class="user-info d-flex align-items-center">
+              <div class="image">
+                <img [src]="element.user.img" class="rounded-circle" alt="user-image">
+              </div>
+              <div class="info">
+                <span class="fw-medium d-block">{{element.user.name}}</span>
+                <span class="email d-block text-body">{{element.user.email}}</span>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="link">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let element">
+            <a routerLink="/dashboard/tables/data-table" mat-button class="link-btn d-inline-block rounded-circle position-relative">
+              <i class="material-symbols-outlined">{{element.link}}</i>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+</mat-card> -->
+
+
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-card mb-25 d-md-flex align-items-center justify-content-between">
+    <h5 class="mb-0">
+        Users List
+    </h5>
+    <ol class="breadcrumb list-unstyled mt-0 mb-0 p-0">
+        <li class="breadcrumb-item d-inline-block position-relative">
+            <a routerLink="/dashboard" class="d-inline-block position-relative">
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                Dashboard
+            </a>
+        </li>
+        <li class="breadcrumb-item d-inline-block position-relative">
+            User Management
+        </li>
+        <!-- <li class="breadcrumb-item d-inline-block position-relative">
+            Users List
+        </li> -->
+    </ol>
+</div>
+
+<!-- Users List -->
+<mat-card class="users-list-card table-style-two mb-25 border-radius d-block bg-white border-0 shadow-none">
+    <mat-card-header>
+        <mat-card-title>
+            <a class="add-btn" (click)="toggleClass()" mat-button>
+                <i class="material-symbols-outlined">
+                    add
+                </i>
+                Add New User
+            </a>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <div class="search-box position-relative">
+                <label>
+                  <i class="material-symbols-outlined">search</i>
+                </label>
+                <input
+                  type="text"
+                  class="input-search"
+                  placeholder="Search user here....."
+                  (keyup)="applyFilter($event)"
+                  #input
+                />
+              </div>
+              
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="table-responsive">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          
+
+              <!-- ID Column -->
+              <!-- <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+           -->
+              <!-- User Column (First and Last Name) -->
+              <ng-container matColumnDef="user">
+                <th mat-header-cell *matHeaderCellDef> User </th>
+                <td mat-cell *matCellDef="let element">
+                  <div class="customer-info d-flex align-items-center">
+                    <!-- <div class="img">
+                      <img src="images/users/user6.jpg" class="rounded-circle" alt="user-image" />
+                    </div> -->
+                    <span class="d-block text-black fw-medium">
+                      {{element.user.name}}
+                    </span>
+                  </div>
+                </td>
+              </ng-container>
+          
+              <!-- Email Column -->
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+              </ng-container>
+          
+              <!-- UserName Column -->
+              <ng-container matColumnDef="userName">
+                <th mat-header-cell *matHeaderCellDef> UserName </th>
+                <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+              </ng-container>
+          
+              <!-- Phone Column -->
+              <ng-container matColumnDef="phoneNumber">
+                <th mat-header-cell *matHeaderCellDef> Phone </th>
+                <td mat-cell *matCellDef="let element" class="text-black"> {{element.phoneNumber}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="location">
+                <th mat-header-cell *matHeaderCellDef> Location </th>
+                <td mat-cell *matCellDef="let element"> {{ element.location }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+                <td mat-cell *matCellDef="let element"> {{ element.phone }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="projects">
+                <th mat-header-cell *matHeaderCellDef> Projects </th>
+                <td mat-cell *matCellDef="let element"> {{ element.projects }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="joinDate">
+                <th mat-header-cell *matHeaderCellDef> Join Date </th>
+                <td mat-cell *matCellDef="let element"> {{ element.joinDate }} </td>
+              </ng-container>
+
+              <!-- Status Column -->
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                
+                <td mat-cell *matCellDef="let element">
+                    <span class="trezo-badge" *ngIf="element.status==1">
+                        Active
+                    </span>
+                    <span class="trezo-badge pending" *ngIf="element.status==3">
+                        Pending
+                    </span>
+                    <!-- <span class="trezo-badge inProgress" *ngIf="element.status.inProgress">
+                        In Progress
+                    </span> -->
+                    <span class="trezo-badge cancelled" *ngIf="element.status==2">
+                        InActive
+                    </span>
+              </ng-container>
+          
+              <!-- Role Column -->
+              <ng-container matColumnDef="role">
+                <th mat-header-cell *matHeaderCellDef> Role </th>
+                <td mat-cell *matCellDef="let element"> {{element.role || 'N/A'}} </td>
+              </ng-container>
+          
+              <!-- Action Column -->
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element">
+                  <div class="action-buttons d-flex align-items-center">
+                    <!-- <button type="button" mat-button (click)="viewUser(element)">
+                      <i class="material-symbols-outlined"> visibility </i>
+                    </button> -->
+                    <button type="button" mat-button (click)="onEdit(element)">
+                      <i class="material-symbols-outlined"> edit </i>
+                    </button>
+                    <button type="button" mat-button (click)="onDelete(element.id)">
+                      <i class="material-symbols-outlined"> delete </i>
+                    </button>
+                  </div>
+                </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="8">No data matching the filter "{{input.value}}"</td>
+              </tr>
+          
+            </table>
+          </div>
+          
+        <mat-paginator [pageSizeOptions]="[10]" showFirstLastButtons></mat-paginator>
+    </mat-card-content>
+</mat-card>
+<!-- Add New Popup -->
+<div
+    class="add-new-popup"
+    [class.active]="classApplied"
+>
+    <div class="popup-dialog">
+        <mat-card class="border-radius d-block bg-white border-0 shadow-none">
+            <mat-card-header>
+                <mat-card-title>
+                    <h5 class="mb-0">
+                        Add User
+                    </h5>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <button
+                        mat-button
+                        (click)="toggleClass()"
+                    >
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <!-- <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="main-label d-block fw-medium text-black">Full Name</label>
+                          <mat-form-field>
+                            <mat-label>Full Name</mat-label>
+                            <input matInput formControlName="user" placeholder="E.g. John Doe">
+                          </mat-form-field>
+                        </div>
+                      </div>
+                  
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="main-label d-block fw-medium text-black">Email</label>
+                          <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="email" placeholder="E.g. johndoe@example.com">
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="main-label d-block fw-medium text-black">Phone Number</label>
+                          <mat-form-field>
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput formControlName="phone" placeholder="E.g. +1234567890">
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="btn-box">
+                      <button mat-button (click)="toggleClass()" color="warn">Cancel</button>
+                      <button mat-button color="primary" type="submit">
+                        <i class="material-symbols-outlined">add</i>
+                        Update
+                      </button>
+                    </div>
+                  </form> -->
+                  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <!-- Full Name -->
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">Full Name</label>
+                            <mat-form-field>
+                              <mat-label>Full Name</mat-label>
+                              <input matInput formControlName="user" placeholder="E.g. John Doe">
+                            </mat-form-field>
+                          </div>
+                        </div>
+                      
+                        <!-- Email -->
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">Email</label>
+                            <mat-form-field>
+                              <mat-label>Email</mat-label>
+                              <input matInput formControlName="email" placeholder="E.g. johndoe@example.com">
+                            </mat-form-field>
+                          </div>
+                        </div>
+                      
+                        <!-- Phone -->
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">Phone Number</label>
+                            <mat-form-field>
+                              <mat-label>Phone Number</mat-label>
+                              <input matInput formControlName="phone" placeholder="E.g. +1234567890">
+                            </mat-form-field>
+                          </div>
+                        </div>
+                      
+                        <!-- Role Permissions -->
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="main-label d-block fw-medium text-black">Role Permissions</label>
+                            <mat-slide-toggle formControlName="allowExport">Allow Export</mat-slide-toggle>
+                            <mat-slide-toggle formControlName="allowFetchRecords">Allow Fetch Records</mat-slide-toggle>
+                          </div>
+                        </div>
+                      
+                        <!-- Social Media Access -->
+                        <div class="col-md-12 mt-3">
+                          <label class="main-label d-block fw-medium text-black">Social Media Access</label>
+                          <div class="form-row">
+                            <div class="col-md-6">
+                              <div class="form-check">
+                                <mat-checkbox formControlName="facebook">Facebook</mat-checkbox>
+                              </div>
+                              <div class="form-check">
+                                <mat-checkbox formControlName="twitter">Twitter</mat-checkbox>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-check">
+                                <mat-checkbox formControlName="instagram">Instagram</mat-checkbox>
+                              </div>
+                              <div class="form-check">
+                                <mat-checkbox formControlName="linkedin">LinkedIn</mat-checkbox>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                  
+                    <div class="btn-box mt-3">
+                      <button mat-button (click)="toggleClass()" color="warn">Cancel</button>
+                      <button mat-button color="primary" type="submit">
+                        <i class="material-symbols-outlined">add</i>
+                        Add user
+                      </button>
+                    </div>
+                  </form>
+                  
+                
+              
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
