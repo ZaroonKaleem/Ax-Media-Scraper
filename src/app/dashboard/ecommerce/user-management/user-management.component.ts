@@ -63,6 +63,8 @@ userForm!: FormGroup;
             user: [''],
             email: [''],
             phone: [''],
+            password: [''],
+            cPassword:[''],
             rolePermissions: [false],
             allowExport: [false],
             allowFetchRecords: [false],
